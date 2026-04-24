@@ -41,22 +41,26 @@ Diccionario de Datos
 
 Tabla: aspirantes
 
-| Columna        | Tipo de dato | Límite de caracteres | ¿Es nulo? | Descripción                          |
-|----------------|--------------|-----------------------|-----------|--------------------------------------|
-| id             | INT          | N/A                  | No        | Identificador único del aspirante.  |
-| nombre         | VARCHAR      | 100                  | No        | Nombre completo del aspirante.      |
-| apellido       | VARCHAR      | 100                  | No        | Apellido del aspirante.             |
-| correo         | VARCHAR      | 150                  | No        | Correo electrónico del aspirante.   |
-| telefono       | VARCHAR      | 15                   | No        | Número de teléfono del aspirante.   |
-| direccion      | TEXT         | N/A                  | No        | Dirección del aspirante.            |
-| carrera        | VARCHAR      | 100                  | No        | Carrera a la que aplica el aspirante.|
-| fecha_registro | DATE         | N/A                  | No        | Fecha de registro del aspirante.    |
+| Columna | Tipo de dato | Límite de caracteres | ¿Es nulo? | Descripción |
+| --- | --- | --- | --- | --- |
+| id | INT | N/A | No | Identificador único del aspirante (PK, autoincrement). |
+| nombres | VARCHAR | 100 | No | Nombres del aspirante. |
+| apellidos | VARCHAR | 100 | No | Apellidos del aspirante. |
+| DUI | VARCHAR | 10 | No | Documento Único de Identidad (único). |
+| correo_electronico | VARCHAR | 100 | No | Correo electrónico del aspirante. |
+| telefono | VARCHAR | 9 | No | Teléfono principal del aspirante. |
+| telefono_alternativo | VARCHAR | 9 | Sí | Teléfono alternativo del aspirante. |
+| carrera | VARCHAR | 100 | No | Carrera a la que aplica el aspirante. |
+| turno | ENUM | N/A | No | Turno de estudio: Matutino, Vespertino o Fin de Semana. |
 
 Tabla: usuarios
 
-| Columna        | Tipo de dato | Límite de caracteres | ¿Es nulo? | Descripción                          |
-|----------------|--------------|-----------------------|-----------|--------------------------------------|
-| id             | INT          | N/A                  | No        | Identificador único del usuario.    |
-| username       | VARCHAR      | 50                   | No        | Nombre de usuario.                  |
-| password       | VARCHAR      | 255                  | No        | Contraseña del usuario.             |
-| rol            | ENUM         | N/A                  | No        | Rol del usuario (admin o usuario).  |
+| Columna | Tipo de dato | Límite de caracteres | ¿Es nulo? | Descripción |
+| --- | --- | --- | --- | --- |
+| id | INT | N/A | No | Identificador único del usuario (PK, autoincrement). |
+| username | VARCHAR | 50 | No | Nombre de usuario (único). |
+| password | VARCHAR | 255 | No | Contraseña del usuario (se recomienda encriptar). |
+| tipo_usuario | ENUM | N/A | No | Rol del usuario: ``admin`` o ``usuario``. |
+| nombre_completo | VARCHAR | 100 | No | Nombre completo del usuario. |
+| email | VARCHAR | 100 | No | Correo electrónico del usuario. |
+| fecha_registro | TIMESTAMP | N/A | No | Fecha y hora de registro del usuario. |
